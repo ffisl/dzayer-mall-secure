@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم المسؤول - DzayerMall</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4f46e5;
+            /* Indigo for Admin */
+            --surface: #ffffff;
+            --bg: #f8fafc;
+            --text: #0f172a;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 260px;
+            background: var(--surface);
+            padding: 2rem;
+            border-left: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 3rem;
+        }
+
+        .nav-item {
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 12px;
+            color: #64748b;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            background: #eef2ff;
+            color: var(--primary);
+        }
+
+        /* Main Content */
+        .main {
+            flex: 1;
+            padding: 2rem;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--surface);
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text);
+            margin-top: 0.5rem;
+        }
+
+        .stat-label {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .table-container {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 1rem;
+            text-align: right;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        th {
+            color: #64748b;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .status {
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status.active {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .status.pending {
+            background: #fef9c3;
+            color: #854d0e;
+        }
+
+        .btn-logout {
+            margin-top: auto;
+            color: #ef4444;
+        }
+    </style>
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="logo">DzayerMall Admin</div>
+        <a href="#" class="nav-item active">📊 لوحة القيادة</a>
+        <a href="#" class="nav-item">👥 التجار</a>
+        <a href="#" class="nav-item">📦 المنتجات</a>
+        <a href="#" class="nav-item">⚙️ الإعدادات</a>
+        <a href="login.html" class="nav-item btn-logout">تسجيل خروج</a>
+    </aside>
+
+    <main class="main">
+        <div class="header">
+            <h2>نظرة عامة</h2>
+            <div class="user-profile">مرحباً، المدير 👋</div>
+        </div>
+
+        <div class="card-grid">
+            <div class="stat-card">
+                <div class="stat-label">إجمالي المبيعات</div>
+                <div class="stat-value">1,250,000 د.ج</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">التجار النشطين</div>
+                <div class="stat-value">45</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">المنتجات المعروضة</div>
+                <div class="stat-value">892</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">طلبات جديدة</div>
+                <div class="stat-value">12</div>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <h3 style="margin-bottom: 1.5rem;">آخر التجار المسجلين</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>اسم المتجر</th>
+                        <th>المالك</th>
+                        <th>تاريخ التسجيل</th>
+                        <th>الحالة</th>
+                        <th>إجراءات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>إلكترونيات الجزائر</td>
+                        <td>أحمد محمد</td>
+                        <td>2024-03-15</td>
+                        <td><span class="status active">نشط</span></td>
+                        <td><button>عرض</button></td>
+                    </tr>
+                    <tr>
+                        <td>موضة ستايل</td>
+                        <td>سارة علي</td>
+                        <td>2024-03-14</td>
+                        <td><span class="status pending">قيد المراجعة</span></td>
+                        <td><button>تفعيل</button></td>
+                    </tr>
+                    <tr>
+                        <td>ديكور هوم</td>
+                        <td>كريم عمر</td>
+                        <td>2024-03-12</td>
+                        <td><span class="status active">نشط</span></td>
+                        <td><button>عرض</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+
+</html>
